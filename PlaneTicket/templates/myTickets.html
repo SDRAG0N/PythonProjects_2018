@@ -1,0 +1,73 @@
+<!--DOCTYPE html-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space_ticket</title>
+</head>
+<body>
+<div >
+    <div data-role="header">
+        <h1><center>我的订单</center></h1>
+    </div>
+
+    <div role="main" class="ui-content"style="font-size:20px; background-color: aquamarine">
+     <center>
+     <div style="color: #ff7100"><h3>你好：{{ user }}</h3></div>
+     <div style="color: #ff110c"><h3>{{ message }}</h3></div>
+     <form action="/queryFlight/" method="get">
+         起飞城市：<input type="text" name="startCity"/>
+         到达城市:<input type="text" name="arriveCity"/>
+         <input type="submit" value="查询航班">
+     </form >
+     <table>
+         <tr>
+             <td>订单编号</td>
+             <td>航班号&nbsp;</td>
+             <td>航班名&nbsp;</td>
+             <td>飞机型号&nbsp;</td>
+             <td>航空公司&nbsp;</td>
+             <td>起飞时间&nbsp;</td>
+             <td>到达时间&nbsp;</td>
+             <td>起飞城市&nbsp;</td>
+             <td>到达城市&nbsp;</td>
+             <td>飞行时间&nbsp;</td>
+             <td>已订座位</td>
+             <td>票价&nbsp;</td>
+         </tr>
+
+         {% for i in myFlight %}
+         <tr>
+             <td>{{i.userTicketsId}}</td>
+             <td>{{i.flightId}}&nbsp;</td>
+             <td>{{i.flightName}}&nbsp;</td>
+             <td>{{i.flightType}}&nbsp;</td>
+             <td>{{i.flightCompany}}&nbsp;</td>
+             <td>{{i.startTime}}&nbsp;</td>
+             <td>{{i.arriveTime}}&nbsp;</td>
+             <td>{{i.startCity}}&nbsp;</td>
+             <td>{{i.arriveCity}}&nbsp;</td>
+             <td>{{i.flyTime}}&nbsp;</td>
+             <td>{{ i.seats }}</td>
+             <td>{{i.fare}}&nbsp;</td>
+             <form  action="/payTicket/" method="post">
+             <input type="hidden" name="userTicketsId" value={{ i.userTicketsId }}>
+             <td><input type="submit" name="buy" value="付款"></td>
+             </form>
+         </tr>
+         {% endfor %}
+
+         <div style="color: #ff0b0c">{{ error }}</div>
+
+     <br/>
+ </table>
+     <br/></center>
+    </div>
+
+    <div data-role="footer">
+        <h1><center>SDRAGON航空公司</center></h1>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--默认缩放比例为一即不缩放-->
+    <!--<script type="text/javascript">-->
+        <!--alert("由于您还没有登录，请登录：");-->
+    <!--</script>-->
+</head>
+<body>
+<div data-role="page" id="login2">
+    <div data-role="header">
+        <h1>
+            <center>目前业务员权限仅限于查询客户购买信息</center>
+        </h1>
+    </div>
+    <div role="main" class="ui-content" style="font-size:20px; background-color: aquamarine">
+        <center>
+            <form method="POST" action="/salesman/">
+
+                <table >
+                    <tr>
+                        <td>客户身份证号码:</td>
+                        <td><input type="text" name="username"></td>
+                    </tr>
+
+                    <br/>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="确认"></td>
+                        <div style="color: #ff0b0c">{{error}}</div>
+                    </tr>
+                </table>
+
+            </form>
+            <br/>
+            </center>
+
+
+    </div>
+
+    <div data-role="footer">
+        <h1>
+            <center>京湘铁路</center>
+        </h1>
+    </div>
+</div>
+</body>
+</html>

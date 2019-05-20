@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket_purchase</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--默认缩放比例为一即不缩放-->
+</head>
+<body>
+<div>
+    <div data-role="header">
+        <h1>
+            <center>购票</center>
+        </h1>
+    </div>
+    <div role="main" class="ui-content" style="font-size:20px; background-color: aquamarine">
+        <center>
+            <form action="/Ticket_purchase_action/" method="POST">
+
+                <table id="purchase">
+                    <tr>
+                        <td>出发地：</td>
+                        <td><input type="text" name="start_place"></td>
+                    </tr>
+                    <tr>
+                        <td>目的地：</td>
+                        <td><input type="text" name="aim_place"></td>
+                    </tr>
+                    <tr>
+                        <td>请输入您的身份证号码：</td>
+                        <td><input type="text" name="user_id"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="确认"></td>
+                    </tr>
+                </table>
+                <p>温馨提示：本次列车途径的站点：北京、石家庄、郑州、武汉、长沙 <br/>请参考车次信息表</p>
+            </form>
+        </center>
+    </div>
+
+    <div data-role="footer">
+        <h1>
+            <center>京湘铁路</center>
+        </h1>
+    </div>
+
+</div>
+</body>
+</html>

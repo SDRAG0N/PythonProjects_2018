@@ -1,0 +1,33 @@
+<!--DOCTYPE html-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space_ticket</title>
+</head>
+<body>
+<div >
+    <div data-role="header">
+        <h1><center>车次信息</center></h1>
+    </div>
+
+    <div role="main" class="ui-content"style="font-size:20px; background-color: aquamarine">
+     <center>
+
+         <table>
+             <tr><td>车次&nbsp;</td><td>发车站&nbsp;</td><td>到达站&nbsp;</td><td>出发时间&nbsp;</td><td>到站时间&nbsp;</td><td>里程数&nbsp;</td><td>火车类型&nbsp;</td></tr>
+     {% for b in space_ticket %}
+             <tr><td>{{b.trafic_id}}&nbsp;</td><td>{{b.start_station}}&nbsp;</td><td>{{b.aim_station}}&nbsp;</td><td>{{b.start_time}}&nbsp;</td><td>{{b.aim_time}}&nbsp;</td><td>{{b.mileage}}&nbsp;</td><td>{{b.train_type}}&nbsp;</td></tr>
+     {% endfor %}
+         <br/>
+     </table>
+     <br/></center>
+    </div>
+
+    <div data-role="footer">
+        <h1><center>京湘铁路</center></h1>
+    </div>
+
+</div>
+
+</body>
+</html>

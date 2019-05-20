@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refund</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--默认缩放比例为一即不缩放-->
+</head>
+<body>
+<div data-role="page" id="index2">
+    <div data-role="header">
+        <h1>
+            <center>退票</center>
+        </h1>
+    </div>
+
+    <div role="main" class="ui-content" style="font-size:20px; background-color: aquamarine"><br/><br/>
+
+        <center>
+            <form action="/refund_action/" method="POST">
+
+                <table id="purchase">
+                    <tr>
+                        <td>请输入退票人身份证号码：</td>
+                        <td><input type="text" name="username"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="确认"></td>
+                    </tr>
+                    <div style="color: #ff0e11">{{error}}</div>
+                </table>
+            </form>
+        </center>
+
+    </div>
+
+    <div data-role="footer">
+        <h1>
+            <center>京湘铁路</center>
+        </h1>
+    </div>
+</div>
+</body>
+</html>

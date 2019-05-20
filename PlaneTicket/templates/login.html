@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>航空公司</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--默认缩放比例为一即不缩放-->
+    <!--script type="text/javascript">
+        alert("由于您还没有登录，请登录：");
+    </--script-->
+
+</head>
+<body>
+<div data-role="page" id="login2">
+    <div data-role="header">
+        <h1>
+            <center>LOGIN</center>
+        </h1>
+    </div>
+    <div role="main" class="ui-content" style="font-size:20px; background-color: aquamarine">
+        <center>
+            <form method="POST" name="loginForm" action="/login_action/">
+
+                <table id="login">
+                    <tr>
+                        <td>Username:</td>
+                        <td><input type="text" name="username"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="passwd"></td>
+                    </tr>
+                    <br/>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit"  name="userLogin" value="普通用户登录" ></td>
+                        <td><input type="submit" name="travelLogin" value="旅行社登录" ></td>
+                        <td><input type="submit" name="airlineCompanyLogin" value="航空公司登录"></td>
+                        <div style="color: #ff0b0c">{{ error }}</div>
+                    </tr>
+                </table>
+
+            </form>
+            <br/>
+            你还没有账号？请点击这里注册<br/>
+            <a href="/userRegister/" style="color: #1317ff">普通用户注册</a><br/>
+            <a href="/travelAgencyRegister/" style="color: #1317ff">旅行社注册</a></center>
+
+
+
+    </div>
+
+    <div data-role="footer">
+        <footer>
+            <h1>
+                <center>SDRAGON机票售票系统</center>
+            </h1>
+        </footer>
+
+    </div>
+</div>
+</body>
+</html>

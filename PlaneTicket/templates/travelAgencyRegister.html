@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--默认缩放比例为一即不缩放-->
+    <script type="text/javascript">
+    function validate(){
+    var word1= document.getElementById("newpassword").value;
+    var word2 = document.getElementById("confirmNewPassword").value;
+    if(word1 != word2){
+      window.alert("两次输入的新密码不一致！");
+      confirmNewPassword.focus();
+      return false;
+    }
+    return true;
+    }   
+  </script>
+</head>
+<body>
+<div >
+    <div data-role="header">
+        <h1><center>旅行社注册</center></h1>
+    </div>
+
+    <div role="main" class="ui-content"style="font-size:20px; background-color: aquamarine"><br/>
+        <center>
+            <form  method="POST"  action="/travelAgencyRegister_action/">
+                <table>
+                    <tr>
+                        <td>旅行社代号:</td>
+                        <td><input type="text" name="ID" /></td>
+                    </tr>
+                    <tr>
+                        <td>密码:</td>
+                        <td><input type="password" name="passwd1" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td>请再次输入密码:</td>
+                        <td><input type="password" name="passwd2" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td>旅行社名称：</td>
+                        <td><input type="text" name="name" /></td>
+                    </tr>
+                    <tr>
+                        <td>办公地址：</td>
+                        <td><input type="text" name="officeAddress" /></td>
+                    </tr>
+                    <tr>
+                        <td>联系电话：</td>
+                        <td><input type="text" name="phone" /></td>
+                    </tr>
+
+                   <tr>
+                       <td></td>
+                       <td><input type="submit"   value="注册"><br/></td>
+                   </tr>
+                <div style="color: #ff0e11">{{error}}</div></table>
+
+            </form></center>
+
+    </div>
+
+    <div data-role="footer">
+        <h1><center>XXXX机票售票系统</center></h1>
+    </div>
+</div>
+</body>
+</html>

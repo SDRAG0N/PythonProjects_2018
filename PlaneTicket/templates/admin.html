@@ -1,0 +1,102 @@
+<!--DOCTYPE html-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space_ticket</title>
+    <style>
+        input{
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div data-role="header">
+        <h1><center>管理</center></h1>
+    </div>
+
+    <div role="main" class="ui-content"style="font-size:20px; background-color: aquamarine">
+     <center>
+     <div style="color: #ff7100"><h3>管理员：{{ user }}</h3></div>
+     <div style="color: #ff1607">{{ message }}</div>
+     <form  action="/addOrReduce/"  method="post">
+     <table>
+         <tr>
+             <td>航班号</td>
+             <td>航班名</td>
+             <td>飞机型号</td>
+             <td>航空公司</td>
+             <td>起飞时间</td>
+             <td>到达时间</td>
+             <td>起飞城市</td>
+             <td>到达城市</td>
+             <td>飞行时间</td>
+             <td>剩余座位数</td>
+             <td>票价</td>
+             <td>折扣比率(只支持旅行社)</td>
+         </tr>
+         <tr>
+             <td><input type="text" name="flightId"/></td>
+             <td><input type="text" name="flightName"/></td>
+             <td><input type="text" name="flightType"/></td>
+             <td><input type="text" name="flightCompany"/></td>
+             <td><input type="text" name="startTime"/></td>
+             <td><input type="text" name="arriveTime"/></td>
+             <td><input type="text" name="startCity"/></td>
+             <td><input type="text" name="arriveCity"/></td>
+             <td><input type="text" name="flyTime"/></td>
+             <td><input type="text" name="seats"/></td>
+             <td><input type="text" name="fare"/></td>
+             <td><input type="text" name="discountRate"/></td>
+             <td><input type="submit" name="add" value="添加航班" /></td>
+         </tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr></tr>
+         <tr>
+             <td>输入航班号：</td>
+             <td><input type="text" name="reduceFlightId"/></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td><input type="submit" name="reduce" value="删除航班"></td>
+         </tr>
+          <tr>
+             <td>输入航班号：</td>
+             <td><input type="text" name="setFlightId"/></td>
+             <td>输入折扣率：</td>
+             <td><input type="text" name="setFlightRate"/></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+             <td><input type="submit" name="setRate" value="设置折扣率"></td>
+         </tr>
+     <br/>
+     </table>
+     </form>
+     <div>上座率{{ AttendanceRate}}</div>
+     <br/></center>
+    </div>
+
+    <div data-role="footer">
+        <h1><center>SDRAGON航空公司</center></h1>
+    </div>
+
+</div>
+
+</body>
+</html>

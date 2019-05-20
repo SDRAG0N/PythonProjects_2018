@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refund</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"><!--默认缩放比例为一即不缩放-->
+</head>
+<body>
+<div data-role="page" id="index2">
+    <div data-role="header">
+        <h1>
+            <center>退票</center>
+        </h1>
+    </div>
+
+    <div role="main" class="ui-content" style="font-size:20px; background-color: aquamarine"><br/><br/>
+
+        <center>
+            <form action="/refund_action2/" method="POST">
+
+                <table id="purchase">
+                    <tr>
+                        <td>身份证号码&nbsp;</td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td>发车站&nbsp;</td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td>到达站&nbsp;</td>
+                        {% for d in success_ticket%}
+                    <tr>
+                        <td>{{d.user_id}}&nbsp;</td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td>{{d.start_station}}&nbsp;</td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td>{{d.aim_station}}&nbsp;</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td>请输入验证码(即身份证号码)：</td>
+                        <td><input type="text" name="username"></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="确认退票"></td>
+                    </tr>
+                    <div style="color: #ff0e11">{{error}}</div>
+                </table>
+            </form>
+        </center>
+
+
+        <div data-role="footer">
+            <h1>
+                <center>京湘铁路</center>
+            </h1>
+        </div>
+    </div>
+</div>
+</body>
+</html>
